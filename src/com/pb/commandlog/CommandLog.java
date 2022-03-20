@@ -31,7 +31,7 @@ FileConfiguration config = this.getConfig();
     public void onCommand(PlayerCommandPreprocessEvent event) {
 		Player player = event.getPlayer();
 		if(player == null) return;
-		String msg = event.getMessage().replace("/", "");
+		String msg = event.getMessage().replaceFirst("[/]", "");
 		
 		Date currentDate = new Date();
 		SimpleDateFormat formatter = new SimpleDateFormat("kk:mm:ss");
