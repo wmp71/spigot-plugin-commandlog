@@ -32,6 +32,9 @@ FileConfiguration config = this.getConfig();
 		Player player = event.getPlayer();
 		if(player == null) return;
 		String msg = event.getMessage().replaceFirst("[/]", "");
+		if(msg.startsWith("say ") || msg.startsWith("t ") || msg.startsWith("tell ") || msg.startsWith("tellraw ") || msg.startsWith("w ") || msg.startsWith("me ") || msg.startsWith("msg ")) {
+			return;
+		}
 		
 		Date currentDate = new Date();
 		SimpleDateFormat formatter = new SimpleDateFormat("kk:mm:ss");
